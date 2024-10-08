@@ -1,5 +1,8 @@
 from config import *
 from jogador import Jogador
+from sprite import *
+
+from random import randint
 
 class Jogo:
     def __init__(self):
@@ -13,9 +16,14 @@ class Jogo:
 
         #grupo
         self.all_sprites = pygame.sprite.Group()
+        self.collision_sprites = pygame.sprite.Group()
 
         #sprites
-        self.player = Jogador((620, 360), self.all_sprites)
+        self.player = Jogador((620, 360), self.all_sprites, self.collision_sprites)
+        for i in range(6):
+            x, y =  randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)
+            w, h = randint(60, 100), randint(50, 100)
+            collision((x, y), (w, h), (self.all_sprites, self.collision_sprites))
 
     def run(self):  
         while self.menu:
