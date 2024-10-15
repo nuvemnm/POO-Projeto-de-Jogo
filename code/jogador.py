@@ -3,7 +3,7 @@ from config import *
 class Jogador(pygame.sprite.Sprite):
     def __init__(self, position: int, groups, collision_sprites):
         super().__init__(groups) 
-        self.image = pygame.image.load('C:/UFMG/02-2024/POO/POO-Projeto-de-Jogo/images/personagem/magomenor.png').convert_alpha()
+        self.image = pygame.image.load('/home/UFMG.BR/matheusscarv/Downloads/POO-Projeto-de-Jogo/images/personagem/magomenor.png').convert_alpha()
         self.rect = self.image.get_rect(center = position)
 
         #movimento
@@ -20,9 +20,9 @@ class Jogador(pygame.sprite.Sprite):
         #normaliza velocidade diagonal
         self.direction = self.direction.normalize() if self.direction else self.direction
         if keys[pygame.K_RIGHT]:
-            self.image = pygame.image.load('C:/UFMG/02-2024/POO/POO-Projeto-de-Jogo/images/personagem/magomenor-direita.png').convert_alpha()
+            self.image = pygame.image.load('/home/UFMG.BR/matheusscarv/Downloads/POO-Projeto-de-Jogo/images/personagem/magomenor-direita.png').convert_alpha()
         elif keys[pygame.K_LEFT]:
-            self.image = pygame.image.load('C:/UFMG/02-2024/POO/POO-Projeto-de-Jogo/images/personagem/magomenor.png').convert_alpha()
+            self.image = pygame.image.load('/home/UFMG.BR/matheusscarv/Downloads/POO-Projeto-de-Jogo/images/personagem/magomenor.png').convert_alpha()
 
     def move(self, dt):
         self.hitbox.x += self.direction.x * self.speed * dt 
