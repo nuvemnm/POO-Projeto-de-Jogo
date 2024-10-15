@@ -1,0 +1,8 @@
+{
+    "images":{
+        "bigMage":"/images/characters/bigMage",
+        "rightSmallMage":"/images/characters/rightSmallMage",
+        "smallMage":"/images/characters/smallMage"
+    }
+
+}

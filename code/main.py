@@ -1,7 +1,11 @@
 from config import *
+from configs import Configs
 from jogador import Jogador
 from sprite import *
 from pytmx.util_pygame import load_pygame
+import utils
+import os
+import json
 
 from random import randint
 
@@ -14,7 +18,7 @@ class Jogo:
         self.clock = pygame.time.Clock()
         self.menu = True
         self.running = False
-
+        self.configs = utils.loadConfigs()
         #grupo
         self.all_sprites = pygame.sprite.Group()
         self.collision_sprites = pygame.sprite.Group()
@@ -26,7 +30,8 @@ class Jogo:
         
 
     def setup(self):
-        map = load_pygame(join('data', 'maps', 'mapa.tmx'))
+        mapFilePath = os.path.join('..','data','maps','mapa.tmx')
+        map = load_pygame(mapFilePath)
         for x, y, image in map.get_layer_by_name('Grama').tiles():
             Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
 
@@ -70,6 +75,8 @@ class Jogo:
         
         pygame.quit()
 
+print(configs.bigMage)
 
-jogo = Jogo()
-jogo.run()
+
+#jogo = Jogo()
+#jogo.run()
