@@ -8,10 +8,10 @@ class Jogador(pygame.sprite.Sprite):
 
         #movimento
         self.direction = pygame.Vector2()
-        self.speed = 500
+        self.speed = 300
         self.collision_sprites = collision_sprites
         #ajusta tamanho do personagem
-        self.hitbox = self.rect.inflate(-30,-10)
+        self.hitbox = self.rect.inflate(-15, -30)
 
     def input(self):
         keys = pygame.key.get_pressed()
