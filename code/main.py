@@ -32,15 +32,15 @@ class Jogo:
         map_path = os.path.abspath(join('maps', 'mapa.tmx'))
         map = load_pygame(map_path)
         for x, y, image in map.get_layer_by_name("Grama").tiles():
-            Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
+           Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
         for x, y, image in map.get_layer_by_name("Parede").tiles():
-            Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
+            Sprite_test((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
         for x, y, image in map.get_layer_by_name("SecondFloor").tiles():
-            Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
+           Sprite_test((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
         for x, y, image in map.get_layer_by_name("Objects").tiles():
-            Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
+            Sprite_test((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
         for x, y, image in map.get_layer_by_name("Objects2").tiles():
-            Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
+            Sprite_test((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
         for x, y, image in map.get_layer_by_name("Details").tiles():
             Sprite((x * TILE_SIZE, y * TILE_SIZE), image, self.all_sprites)
 
@@ -51,6 +51,7 @@ class Jogo:
         for obj in map.get_layer_by_name('Entities'):
             if obj.name == 'player':
                 self.player = Jogador((obj.x, obj.y), self.all_sprites, self.collision_sprites)
+                
 
     def run(self):  
         while self.menu:
