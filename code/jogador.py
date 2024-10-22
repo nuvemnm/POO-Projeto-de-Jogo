@@ -12,7 +12,7 @@ class Jogador(pygame.sprite.Sprite):
         self.speed = 300
         self.collision_sprites = collision_sprites
         #ajusta tamanho do personagem
-        self.hitbox = self.rect.inflate(-15, -30)
+        self.hitbox = self.rect.inflate(-15, -32)
 
     def input(self):
         keys = pygame.key.get_pressed()
@@ -21,7 +21,7 @@ class Jogador(pygame.sprite.Sprite):
         #normaliza velocidade diagonal
         self.direction = self.direction.normalize() if self.direction else self.direction
         if keys[pygame.K_RIGHT]:
-            self.image = pygame.image.load('C:\\UFMG\\02-2024\\POO\\POO-Projeto-de-Jogo\\images\\personagem\\magomenor-direita.png').convert_alpha()
+            self.image = pygame.image.load('/home/UFMG.BR/matheusscarv/Downloads/POO-Projeto-de-Jogo/images/personagem/bossfinal.png').convert_alpha()
         elif keys[pygame.K_LEFT]:
             self.image = pygame.image.load('C:\\UFMG\\02-2024\\POO\\POO-Projeto-de-Jogo\\images\\personagem\\magomenor.png').convert_alpha()
 
